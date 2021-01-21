@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A47D133B25B4A2C9006B73FA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A47D133A25B4A2C9006B73FA /* main.cpp */; };
 		A47D134325B4A3EE006B73FA /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A47D134225B4A3EE006B73FA /* SDL2.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		A4AD915125BA0C6700315E0D /* Screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4AD914F25BA0C6700315E0D /* Screen.cpp */; };
 		A4E3EFE425B4B191007E6C2B /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E3EFE325B4B191007E6C2B /* SDL2_image.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,8 @@
 		A47D133725B4A2C9006B73FA /* SDL_simple_fire */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SDL_simple_fire; sourceTree = BUILT_PRODUCTS_DIR; };
 		A47D133A25B4A2C9006B73FA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		A47D134225B4A3EE006B73FA /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		A4AD914F25BA0C6700315E0D /* Screen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Screen.cpp; sourceTree = "<group>"; };
+		A4AD915025BA0C6700315E0D /* Screen.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Screen.hpp; sourceTree = "<group>"; };
 		A4E3EFE325B4B191007E6C2B /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +69,8 @@
 			isa = PBXGroup;
 			children = (
 				A47D133A25B4A2C9006B73FA /* main.cpp */,
+				A4AD914F25BA0C6700315E0D /* Screen.cpp */,
+				A4AD915025BA0C6700315E0D /* Screen.hpp */,
 			);
 			path = SDL_simple_fire;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A47D133B25B4A2C9006B73FA /* main.cpp in Sources */,
+				A4AD915125BA0C6700315E0D /* Screen.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
