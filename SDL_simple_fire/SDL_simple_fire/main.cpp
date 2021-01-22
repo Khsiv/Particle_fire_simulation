@@ -19,9 +19,19 @@ int main() {
 
     while (1) {
         
+        for (int i(300); i < Screen::SCREEN_HEIGHT; i++) {
+            for (int j(200); j < Screen::SCREEN_WIDTH; j++) {
+                screen.setPixel(j, i, 100, 0, 200);
+            }
+        }
+        
+        screen.setPixel(200, 100, 0, 0, 0);
+        screen.update();
         if (!screen.processEvent()) {
             break;
         }
+        
+        
     }
     
     screen.close();

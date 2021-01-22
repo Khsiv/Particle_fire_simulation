@@ -15,8 +15,8 @@
 namespace scrspace {
 class Screen {
 public:
-    const int SCREEN_WIDTH = 700;
-    const int SCREEN_HEIGHT = 600;
+    const static int SCREEN_WIDTH = 700;
+    const static int SCREEN_HEIGHT = 600;
 private:
     SDL_Window *m_window;
     SDL_Renderer *m_renderer;
@@ -27,7 +27,9 @@ public:
     Screen();
     bool init();
     bool processEvent();
+    void setPixel(int x, int y, Uint8 red, Uint8 green, Uint8 blue);
     void close();
+    void update();
 };
 }
 
