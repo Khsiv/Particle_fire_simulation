@@ -47,10 +47,6 @@ bool Screen::init() {
     m_buffer = new Uint32[SCREEN_HEIGHT * SCREEN_WIDTH];
     memset(m_buffer, 0, SCREEN_HEIGHT * SCREEN_WIDTH * sizeof(Uint32));
     
-    for (int i {0}; i < SCREEN_WIDTH * SCREEN_HEIGHT; ++i) {
-        m_buffer[i] = 0xFFFFFFFF;
-    }
-    
     return true;
 }
 bool Screen::processEvent() {
