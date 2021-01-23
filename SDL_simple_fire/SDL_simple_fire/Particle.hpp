@@ -10,18 +10,23 @@
 #define Particle_hpp
 
 #include <stdio.h>
-
+#include <math.h>
 namespace scrspace {
 
 class Particle {
-public:
-    double m_x;
-    double m_y;
+private:
+    mutable double m_x;
+    mutable double m_y;
+    double m_xspeed;
+    double m_yspeed;
 public:
     Particle();
     virtual ~Particle();
     const double &getX() const {return m_x;}
     const double &getY() const {return m_y;}
+    const void setX(const double &x) const {m_x = x;}
+    const void setY(const double &y) const {m_y = y;}
+    void update();
 };
 
 }
