@@ -15,7 +15,7 @@ namespace scrspace {
     
 class Swarm {
 public:
-    const static int NPARTICLES = 2000;
+    const static int NPARTICLES = 1500;
 private:
     Particle  * m_pParticles;
 public:
