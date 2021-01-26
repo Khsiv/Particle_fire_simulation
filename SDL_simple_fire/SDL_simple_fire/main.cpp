@@ -15,7 +15,7 @@
 using namespace scrspace;
 int main() {
     
-    srand(int(time(0)));
+    srand(int(time(NULL)));
     
     Screen screen;
     Swarm swarm;
@@ -27,24 +27,20 @@ int main() {
     
     while (1) {
         
-        screen.clear();
+        
         int elapsed = SDL_GetTicks();
-        swarm.update();
-        unsigned char green = (1 + sin(elapsed * 0.0001)) * 128;
-        unsigned char red   = (1 + sin(elapsed * 0.0002)) * 128;
-        unsigned char blue  = (1 + sin(elapsed * 0.0003)) * 128;
-        /*
-        for (int i(0); i < Screen::SCREEN_HEIGHT; i++) {
-            for (int j(0); j < Screen::SCREEN_WIDTH; j++) {
-                screen.setPixel(j, i, 0, green, 0);
-            }
-        }
-        */
+        swarm.update(elapsed);
+//        memset(screen.getBuff(), 0, Screen::SCREEN_WIDTH * Screen::SCREEN_HEIGHT * sizeof(Uint32));
+        unsigned char green = (unsigned char)((1 + sin(elapsed * 0.0001)) * 128);
+        unsigned char red   = (unsigned char)((1 + sin(elapsed * 0.0002)) * 128);
+        unsigned char blue  = (unsigned char)((1 + sin(elapsed * 0.0003)) * 128);
+        
         for (int i(0); i < Swarm::NPARTICLES; ++i) {
-            int x = (pParticles[i].getX() + 1) * Screen::SCREEN_WIDTH/2;
-            int y = (pParticles[i].getY() + 0) * Screen::SCREEN_HEIGHT/2 + Screen::SCREEN_HEIGHT/2;
+            int x = (pParticles[i].m_x + 1) * Screen::SCREEN_WIDTH/2;
+            int y = (pParticles[i].m_y + 0) * Screen::SCREEN_HEIGHT/2 + Screen::SCREEN_HEIGHT/2;
             screen.setPixel(x, y, red, green, blue);
         }
+        screen.boxBlur();
         
         screen.update();
         if (!screen.processEvent()) {

@@ -12,14 +12,13 @@
 namespace scrspace {
 Particle::Particle() : m_x(0), m_y(0) {
     m_direction = (2 * M_PI * rand())/RAND_MAX;
-    m_speed = ((0.002) * rand())/RAND_MAX;
+    m_speed = (0.0008 * rand())/RAND_MAX;
 }
 Particle::~Particle() {
     
 }
-void Particle::update() {
-
-    m_x += sin(m_direction) * m_speed;
-    m_y += cos(m_direction) * m_speed;
+void Particle::update(int interval) {
+    m_x += (cos(m_direction) * m_speed) * interval;
+    m_y += (sin(m_direction) * m_speed) * interval;
 }
 }

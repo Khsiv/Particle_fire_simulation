@@ -14,7 +14,7 @@
 namespace scrspace {
 
 class Particle {
-private:
+public:
     mutable double m_x;
     mutable double m_y;
     double m_speed;
@@ -26,7 +26,7 @@ public:
     const double &getY() const {return m_y;}
     const void setX(const double &x) const {m_x = x;}
     const void setY(const double &y) const {m_y = y;}
-    void update();
+    void update(int interval);
 };
 
 }
