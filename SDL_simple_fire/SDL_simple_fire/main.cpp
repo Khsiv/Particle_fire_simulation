@@ -15,14 +15,14 @@
 using namespace scrspace;
 int main() {
     
-    srand(int(time(NULL)));
+    srand(1);
     
     Screen screen;
     Swarm swarm;
     if (!screen.init()) {
         std::cout << "False init\n;";
     }
-    const Particle * const pParticles = swarm.getParticles();
+    
     
     
     while (1) {
@@ -34,7 +34,7 @@ int main() {
         unsigned char green = (unsigned char)((1 + sin(elapsed * 0.0001)) * 128);
         unsigned char red   = (unsigned char)((1 + sin(elapsed * 0.0002)) * 128);
         unsigned char blue  = (unsigned char)((1 + sin(elapsed * 0.0003)) * 128);
-        
+        const Particle * const pParticles = swarm.getParticles();
         for (int i(0); i < Swarm::NPARTICLES; ++i) {
             int x = (pParticles[i].m_x + 1) * Screen::SCREEN_WIDTH/2;
             int y = (pParticles[i].m_y + 0) * Screen::SCREEN_HEIGHT/2 + Screen::SCREEN_HEIGHT/2;

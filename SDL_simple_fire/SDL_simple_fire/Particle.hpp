@@ -22,6 +22,7 @@ public:
 public:
     Particle();
     virtual ~Particle();
+    void init();
     const double &getX() const {return m_x;}
     const double &getY() const {return m_y;}
     const void setX(const double &x) const {m_x = x;}

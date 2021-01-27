@@ -9,7 +9,7 @@
 #include "Screen.hpp"
 
 namespace scrspace {
-Screen::Screen() : m_window(NULL), m_renderer(NULL), m_texture(NULL),  m_buffer1(NULL), m_buffer2(NULL) {
+Screen::Screen() : m_window(NULL), m_renderer(NULL), m_texture(NULL),  m_buffer1(NULL), m_buffer2(NULL){
         
     }
 
@@ -85,9 +85,9 @@ void Screen::update() {
     SDL_RenderPresent(m_renderer);
 }
 void Screen::boxBlur() {
-//    Uint32 *temp = m_buffer1;
-//    m_buffer1 = m_buffer2;
-//    m_buffer2 = temp;
+    Uint32 *temp = m_buffer1;
+    m_buffer1 = m_buffer2;
+    m_buffer2 = temp;
     
     for (int y (0); y < SCREEN_HEIGHT; y++) {
         for (int x (0); x < SCREEN_WIDTH; x++) {
@@ -101,7 +101,7 @@ void Screen::boxBlur() {
                     int currY = y + row;
                     
                     if (currX >= 0 && currX < SCREEN_WIDTH && currY >= 0 && currY < SCREEN_HEIGHT) {
-                        Uint32 color = m_buffer1[currY * SCREEN_WIDTH + currX];
+                        Uint32 color = m_buffer2[currY * SCREEN_WIDTH + currX];
                         
                         Uint8 red = color >> 24;
                         Uint8 green = color >> 16;
@@ -115,7 +115,6 @@ void Screen::boxBlur() {
             }
             
             Uint8 red = redTotal / 9;
-            
             Uint8 green = greenTotal / 9 ;
             Uint8 blue = blueTotal / 9 ;
             
